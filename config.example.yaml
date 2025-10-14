@@ -1,0 +1,41 @@
+# Example configuration for Orphan Manager
+# Copy this to config.yaml and fill your real API keys and paths.
+
+global:
+  medias_base: /path/to/Medias
+  log_dir: /path/to/orphan-manager/logs
+  log_retention_days: 7
+  cycle_count: 1
+  cycle_interval: 60
+  exclude_dirs: []
+  # include_dirs: []
+
+instances:
+  - name: Alldebrid_radarr
+    enabled: true
+    api_key: YOUR_ALLDEBRID_API_KEY_RADARR
+    mount_path: /mnt/decypharr/alldebrid/torrents
+    rate_limit: 0.2
+    retry_attempts: 3
+    retry_backoff: 2.0
+
+  - name: AllDebrid-Sonarr
+    enabled: true
+    api_key: YOUR_ALLDEBRID_API_KEY_SONARR
+    mount_path: /mnt/decypharrsonarr/alldebrid/torrents
+    rate_limit: 0.2
+    retry_attempts: 3
+    retry_backoff: 2.0
+
+# display and logging examples
+display:
+  show_progress: true
+  use_colors: true
+  detailed_stats: true
+
+logging:
+  console_level: INFO
+  file_level: DEBUG
+  json_logging: true
+  syslog_logging: true
+  syslog_ident: orphan-manager

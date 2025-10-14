@@ -1,0 +1,18 @@
+venv/
+__pycache__/
+
+# Logs
+*.log
+*.jsonl
+logs/
+
+# Virtual envs and caches
+.venv/
+env/
+
+# Editor temp
+.vscode/
+*.swp
+
+# Local config with secrets
+config.yaml
